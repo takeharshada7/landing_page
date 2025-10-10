@@ -1,43 +1,47 @@
-<img src="https://github.com/catherineisonline/bankist/blob/main/img/project-preview.png?raw=true" ></img>
-<img src="https://github.com/catherineisonline/bankist/blob/main/img/project-preview-2.png?raw=true" ></img>
-<img src="https://github.com/catherineisonline/bankist/blob/main/img/project-preview-3.png?raw=true" ></img>
+# Banking App - Signup + Chatbot
 
-# Bankist
+This project contains a simple banking app with a React frontend and a Node.js backend. It supports account signup and a lightweight chatbot for common banking questions.
 
-<a href="https://bankist-bank.vercel.app/">Bankist</a> is a fictional and minimalistic online banking application.
+## Structure
 
-Everything you need in a modern bank and more.
-· 100% digital bank
-· Watch your money grow
-· Free debit card included.
+- `server/` – Node.js + Express backend
+- `client/` – React + Vite frontend
 
-## What is Bankist?
+## Prerequisites
 
-Bankist is a fictional online bank. It is a project introduced by <a href="https://github.com/jonasschmedtmann">Jonas Schmedtmann</a> in order to practice DOM manipulation and user interaction. Bankist has an option to log in to the account and use different functionalities, almost like in an actual bank!
+- Node.js 18+
 
-## Functionalities
+## Setup
 
-- Login
-- Transfer a value to another account
-- Get loans
-- Close (delete) account
+In two terminals:
 
-## Login Details
+1. Backend
 
-This is the template login details to use the bank functionality. The project does not include any backend and does not have an actual registration funcionality. Make sure to use usernames are lowercase!
+```bash
+cd server
+npm install
+npm run dev
+```
 
-#### Account One
+2. Frontend
 
-- Login: ww
-- Password: 1111
+```bash
+cd client
+npm install
+npm run dev
+```
 
-#### Account Two
+Open the frontend at `http://localhost:5173`. The backend runs at `http://localhost:4000`.
 
-- Login: jp
-- Password: 2222
+You can override the backend URL by creating a `.env` file in `client/` with:
 
-## Technologies Used
+```
+VITE_API_BASE=http://localhost:4000
+```
 
-- HTML
-- CSS
-- Vanilla JavaScript
+## API
+
+- `POST /api/signup` – body: `{ fullName, email, password, phone? }`
+- `POST /api/chat` – body: `{ message }`
+
+Users are persisted to `server/data/users.json` for demo purposes only.
